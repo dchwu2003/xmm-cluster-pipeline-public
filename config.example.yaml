@@ -1,0 +1,22 @@
+# Placeholder configuration of the server-side stages (pipeline/interfaces.py).
+# Nothing in this repository reads it: the demos run on the bundled CSVs. A deployment would copy
+# this file to config.yaml (ignored by git) and fill in its own values.
+
+server:
+  host: your-analysis-host          # SSH host alias of the machine with SAS and HEASoft
+  work_root: /path/to/work          # new run directories are created here; nothing else is written
+  data_root: /path/to/xmm_data      # ODF and filtered events, one directory per ObsID
+  disk_cap_gb: 140                  # ingest stops before using more than this
+
+software:
+  sas_dir: /path/to/xmmsas          # XMM-SAS installation
+  sas_ccfpath: /path/to/ccf         # current calibration files
+  esas_caldb: /path/to/esas_caldb   # filter-wheel-closed and ESAS calibration
+  heasoft: /path/to/heasoft         # XSPEC (APEC, AtomDB 3.0.9)
+
+fit:
+  forbidden_commands: [error, steppar, chain]   # refused unless explicitly authorised
+  log_every_command: true
+
+archive:
+  xsa_tap: https://nxsa.esac.esa.int/tap-server/tap/sync   # XMM-Newton Science Archive

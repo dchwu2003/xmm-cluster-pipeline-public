@@ -1,0 +1,10 @@
+paper,citation,telescope,compared,quantity,n_clusters,n_values,n_left_out,median_ratio,p16,p84,within_10pct,within_20pct
+zhang2008,Zhang et al. 2008 (LoCuSS),XMM,kT in 0.2-0.5 r500,kT,24,24,2,0.94,0.888,1.007,0.75,1.0
+planck2011,Planck Collaboration 2011 XI,XMM,T_X in 0.15-0.75 R500,kT,32,32,2,0.973,0.89,1.085,0.69,0.91
+planckval,"Planck Collaboration 2011 IX, 2012 I, 2013 IV",XMM,T_X in 0.15-0.75 R500,kT,27,27,11,0.953,0.871,1.023,0.59,0.89
+lovisari2015,Lovisari et al. 2015,XMM,group kT,kT,11,22,4,1.144,0.975,1.313,0.45,0.68
+lovisari2020,Lovisari et al. 2020,XMM,kT in 0-1 and 0.15-1 R500,kT,54,108,6,1.026,0.951,1.124,0.66,0.88
+rossetti2024,Rossetti et al. 2024 (CHEX-MATE),XMM,kT profiles (annuli),kT,26,277,0,0.958,0.886,1.033,0.73,0.93
+johnson2009,Johnson et al. 2009 (2dXGS),XMM,group kT in 0.1-0.3 r500,kT,23,23,2,1.128,0.987,1.414,0.43,0.65
+pratt2009,Pratt et al. 2009 (REXCESS),XMM,kT in 0.15-1 R500,kT,26,74,6,0.96,0.908,1.035,0.84,0.99
+osullivan2017,O'Sullivan et al. 2017 (CLoGS),XMM,group system kT,kT,11,11,6,0.979,0.933,1.032,0.73,0.82
