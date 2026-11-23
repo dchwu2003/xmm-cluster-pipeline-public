@@ -88,6 +88,9 @@ python -m demo.initmodel       # leave-one-cluster-out training and docs/figures
 ```
 
 The initial-model demo takes a minute or two on a laptop; `--folds 10` (ten folds of whole clusters) is faster.
+The seeds are fixed, but tree ensembles are not bit-identical across operating systems and library
+versions, so the last digit of the initial-model numbers can differ from the ones above (they were
+generated on macOS; the Linux CI runner gives a slightly different overall median error).
 `pytest` runs the tests. `python -m demo.readme_numbers` rewrites the numbers above from the bundled CSVs.
 
 ## What is in this repository
