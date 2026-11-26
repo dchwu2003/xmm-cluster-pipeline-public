@@ -8,3 +8,6 @@ rossetti2024,Rossetti et al. 2024 (CHEX-MATE),XMM,kT profiles (annuli),kT,26,277
 johnson2009,Johnson et al. 2009 (2dXGS),XMM,group kT in 0.1-0.3 r500,kT,23,23,2,1.128,0.987,1.414,0.43,0.65
 pratt2009,Pratt et al. 2009 (REXCESS),XMM,kT in 0.15-1 R500,kT,26,74,6,0.96,0.908,1.035,0.84,0.99
 osullivan2017,O'Sullivan et al. 2017 (CLoGS),XMM,group system kT,kT,11,11,6,0.979,0.933,1.032,0.73,0.82
+xgap2025,Eckert et al. 2025 (X-GAP),XMM,group kT in 0-300 kpc,kT,23,23,2,1.028,0.98,1.064,0.91,1.0
+schellenberger2015,Schellenberger et al. 2015 (HIFLUGCS),XMM,"EPIC kT in 0.7-7 keV, r < 3.5 arcmin",kT,41,41,14,0.998,0.963,1.042,0.9,0.98
+bulbul2019,Bulbul et al. 2019 (SPT-SZ),XMM,MOS kT in < R500 and 0.15-1 R500,kT,36,72,42,1.014,0.89,1.187,0.5,0.81

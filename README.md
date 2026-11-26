@@ -8,7 +8,7 @@ no tuning toward the published numbers, and logs every fit as training data for 
 the starting point of the next fit.
 
 *Work in progress.* <!-- numbers:snapshot -->
-Snapshot of the data: 2026-11-22.
+Snapshot of the data: 2026-11-26.
 <!-- /numbers -->
 
 ```mermaid
@@ -39,8 +39,8 @@ Most of the code was written by an AI coding agent (see [Roles](#roles)). It wor
 ## Results so far
 
 <!-- numbers:headline -->
-- **9 papers reproduced**: 598 temperatures of 234 paper-cluster pairs (160 clusters). Median ratio ours / published **0.98**; **70%** within 10 % and **90%** within 20 %. 39 further values are left out by the data-quality rules (rejected data, or kT at the fit limit), whatever their ratio.
-- **Initial-model prototype**: from band fluxes measured before any fit, extra trees predict the starting kT of a cluster they never saw (4,957 spectra of 189 clusters, leave-one-cluster-out) with a median error of **7.2%**; 85% are within 20 %. On the 3,537 spectra (114 clusters) that have a catalogue temperature, the prediction's median error is 6.3% against 13.6% for the catalogue kT; the median kT of the training clusters is off by 32.3%.
+- **12 papers reproduced**: 734 temperatures of 334 paper-cluster pairs (244 clusters). Median ratio ours / published **0.98**; **70%** within 10 % and **90%** within 20 %. 97 further values are left out by the data-quality rules (rejected data, or kT at the fit limit), whatever their ratio.
+- **Initial-model prototype**: from band fluxes measured before any fit, extra trees predict the starting kT of a cluster they never saw (7,762 spectra of 308 clusters, leave-one-cluster-out) with a median error of **7.1%**; 84% are within 20 %. On the 4,525 spectra (166 clusters) that have a catalogue temperature, the prediction's median error is 5.7% against 14.3% for the catalogue kT; the median kT of the training clusters is off by 32.8%.
 <!-- /numbers -->
 
 ![Reproduced temperatures per paper](docs/figures/reproductions.png)
@@ -57,6 +57,9 @@ Most of the code was written by an AI coding agent (see [Roles](#roles)). It wor
 | Johnson et al. 2009 (2dXGS) | group kT in 0.1-0.3 r500 | 23 | 23 | 1.13 | 0.99-1.41 | 43% | 65% |
 | Pratt et al. 2009 (REXCESS) | kT in 0.15-1 R500 | 26 | 74 | 0.96 | 0.91-1.03 | 84% | 99% |
 | O'Sullivan et al. 2017 (CLoGS) | group system kT | 11 | 11 | 0.98 | 0.93-1.03 | 73% | 82% |
+| Eckert et al. 2025 (X-GAP) | group kT in 0-300 kpc | 23 | 23 | 1.03 | 0.98-1.06 | 91% | 100% |
+| Schellenberger et al. 2015 (HIFLUGCS) | EPIC kT in 0.7-7 keV, r < 3.5 arcmin | 41 | 41 | 1.00 | 0.96-1.04 | 90% | 98% |
+| Bulbul et al. 2019 (SPT-SZ) | MOS kT in < R500 and 0.15-1 R500 | 36 | 72 | 1.01 | 0.89-1.19 | 50% | 81% |
 <!-- /numbers -->
 
 ![Predicted against fitted kT](docs/figures/initmodel.png)
@@ -66,12 +69,12 @@ Median error of the starting kT by fitted temperature (median |ln(kT_start / kT_
 <!-- numbers:bins -->
 | fitted kT | spectra | clusters | prediction | catalogue kT |
 |---|---|---|---|---|
-| 0-1 keV | 289 | 27 | 10.1% | 19.3% |
-| 1-2 keV | 412 | 36 | 8.7% | 21.8% |
-| 2-4 keV | 619 | 50 | 8.1% | 19.0% |
-| 4-8 keV | 2,641 | 116 | 5.1% | 10.6% |
-| 8-12 keV | 858 | 59 | 10.9% | 16.1% |
-| 12 keV and above | 138 | 17 | 36.3% | 28.8% |
+| 0-1 keV | 437 | 38 | 11.3% | 19.3% |
+| 1-2 keV | 720 | 63 | 7.8% | 21.8% |
+| 2-4 keV | 1,151 | 95 | 7.1% | 19.0% |
+| 4-8 keV | 4,171 | 189 | 5.4% | 11.7% |
+| 8-12 keV | 1,102 | 75 | 12.3% | 15.4% |
+| 12 keV and above | 181 | 19 | 34.1% | 28.3% |
 <!-- /numbers -->
 
 The prediction needs no catalogue, so it also works for clusters that are in none. Its weak end is the
@@ -124,8 +127,10 @@ the agent above, and the acceptance checks a reproduction has to pass before it 
 written largely with Claude Code (an AI coding agent) under my direction. I reviewed the results,
 decided how to treat offsets and failures, and chose what is published here.
 
-The project is work in progress: more papers are being reproduced, the coolest groups and the hottest
-clusters, the thin ends of the training set, are being added, and the server-side code is not yet in a shareable form.
+The project is work in progress. The fit log behind this snapshot is frozen as the training set of the
+initial model; the next test is the whole pipeline on a new sample of clusters that the model has not
+seen. The coolest groups and the hottest clusters are still the thin ends of the training set, and the
+server-side code is not yet in a shareable form.
 
 ## License
 

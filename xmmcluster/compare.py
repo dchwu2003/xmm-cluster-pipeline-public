@@ -34,6 +34,9 @@ PAPERS = {
     'johnson2009': ('Johnson et al. 2009 (2dXGS)', 'XMM', 'group kT in 0.1-0.3 r500'),
     'pratt2009': ('Pratt et al. 2009 (REXCESS)', 'XMM', 'kT in 0.15-1 R500'),
     'osullivan2017': ("O'Sullivan et al. 2017 (CLoGS)", 'XMM', 'group system kT'),
+    'xgap2025': ('Eckert et al. 2025 (X-GAP)', 'XMM', 'group kT in 0-300 kpc'),
+    'schellenberger2015': ('Schellenberger et al. 2015 (HIFLUGCS)', 'XMM', 'EPIC kT in 0.7-7 keV, r < 3.5 arcmin'),
+    'bulbul2019': ('Bulbul et al. 2019 (SPT-SZ)', 'XMM', 'MOS kT in < R500 and 0.15-1 R500'),
 }
 
 
