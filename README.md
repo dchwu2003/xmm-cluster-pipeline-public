@@ -13,6 +13,7 @@ Snapshot of the data: 2026-11-26.
 
 ```mermaid
 flowchart LR
+    N[new sample<br/>name, position, z] --> A
     A[ingest<br/>ODF, SAS chains,<br/>flare filtering] --> B[extract<br/>source + sky spectra,<br/>particle background]
     B --> C[model<br/>XSPEC model from<br/>rules + initial kT]
     C --> D[fit<br/>XSPEC]
@@ -106,11 +107,12 @@ generated on macOS; the Linux CI runner gives a slightly different overall media
 - `data/summary/reproduction_points.csv`: one row per compared value (ours, published, ratio, data-quality verdict).
 - `data/initmodel/spectra.csv`: one row per fitted spectrum (band fluxes, z, N_H, region, fitted kT and Z,
   catalogue kT). Column definitions are in `xmmcluster/initmodel/data.py`.
-- `pipeline/`: interfaces of the server-side stages and `config.example.yaml`, with placeholders only.
+- `pipeline/`: interfaces of the server-side stages (ingest, automatic fit, sky spectrum, new-sample
+  runner), the first run on a new sample, and `config.example.yaml`, with placeholders only.
 
 ## What is not in this repository, and why
 
-- **Server-side code** (ingest, extraction, XSPEC execution, job control). It is written for one analysis
+- **Server-side code** (ingest, extraction, automatic fit, XSPEC execution, job control). It is written for one analysis
   server and its file layout. `pipeline/interfaces.py` describes what each stage does.
 - **Raw and intermediate data** (observation data files, event files and spectra, far too large for a
   repository) and the full fit log, which holds server paths. The bundled tables are derived from them.
@@ -127,10 +129,13 @@ the agent above, and the acceptance checks a reproduction has to pass before it 
 written largely with Claude Code (an AI coding agent) under my direction. I reviewed the results,
 decided how to treat offsets and failures, and chose what is published here.
 
-The project is work in progress. The fit log behind this snapshot is frozen as the training set of the
-initial model; the next test is the whole pipeline on a new sample of clusters that the model has not
-seen. The coolest groups and the hottest clusters are still the thin ends of the training set, and the
-server-side code is not yet in a shareable form.
+The project is work in progress. The pipeline now runs end to end: from a list of names, positions and
+redshifts it downloads the observations, processes them, fits them and gives each cluster a verdict.
+Its first run, on three clusters outside every reproduced sample, took 3 h 20 min with no manual step;
+two were accepted and the nearby one was rejected as designed (`pipeline/README.md`). The fit log behind
+this snapshot is frozen as the training set of the initial model, and the next test is a larger new
+sample that the model has not seen. The coolest groups and the hottest clusters are still the thin
+ends of the training set, and the server-side code is not yet in a shareable form.
 
 ## License
 
