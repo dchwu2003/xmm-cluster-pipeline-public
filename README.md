@@ -7,7 +7,7 @@ down as explicit rules, checks the rules by reproducing published temperatures w
 no tuning toward the published numbers, and logs every fit as training data for a model that proposes
 the starting point of the next fit.
 
-*Work in progress.* <!-- numbers:snapshot -->
+*The pipeline runs end to end and is in trial use.* <!-- numbers:snapshot -->
 Snapshot of the data: 2026-11-26.
 <!-- /numbers -->
 
