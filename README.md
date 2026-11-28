@@ -133,7 +133,7 @@ the agent above, and the acceptance checks a reproduction has to pass before it 
 written largely with Claude Code (an AI coding agent) under my direction. I reviewed the results,
 decided how to treat offsets and failures, and chose what is published here.
 
-The project is work in progress. The pipeline now runs end to end: from a list of names, positions and
+The pipeline runs end to end and is in trial use: from a list of names, positions and
 redshifts it downloads the observations, processes them, fits them and gives each cluster a verdict.
 Its first run, on three clusters outside every reproduced sample, took 3 h 20 min with no manual step;
 two were accepted and the nearby one was rejected as designed (`pipeline/README.md`). The fit log behind
