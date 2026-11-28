@@ -44,6 +44,10 @@ Most of the code was written by an AI coding agent (see [Roles](#roles)). It wor
 - **Initial-model prototype**: from band fluxes measured before any fit, extra trees predict the starting kT of a cluster they never saw (7,762 spectra of 308 clusters, leave-one-cluster-out) with a median error of **7.1%**; 84% are within 20 %. On the 4,525 spectra (166 clusters) that have a catalogue temperature, the prediction's median error is 5.7% against 14.3% for the catalogue kT; the median kT of the training clusters is off by 32.8%.
 <!-- /numbers -->
 
+These numbers cover the public snapshot only. Together with the studies reproduced on data that were
+processed separately and are not in this repository (see [below](#what-is-not-in-this-repository-and-why)),
+the full comparison covers 31 studies and 963 temperatures, with a median ratio of 0.99 and 68% within 10 %.
+
 ![Reproduced temperatures per paper](docs/figures/reproductions.png)
 
 <!-- numbers:papers -->
